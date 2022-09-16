@@ -3,7 +3,12 @@ import express, { request, response } from "express";
 const app = express();
 
 app.get("/games", (req, res) => {
-  return res.json([]);
+  return res.json([
+    { id: 1, name: "Anuncio 01" },
+    { id: 2, name: "Anuncio 02" },
+    { id: 3, name: "Anuncio 03" },
+    { id: 4, name: "Anuncio 04" },
+  ]);
 });
 
 app.post("/ads", (req, res) => {
@@ -11,8 +16,6 @@ app.post("/ads", (req, res) => {
 });
 
 app.get("/game/:id/ads", (req, res) => {
-  const gameId = req.params.id;
-
   return res.json([
     { id: 1, name: "Anuncio 01" },
     { id: 2, name: "Anuncio 02" },
